@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Avatar, Button, Carousel, List, Skeleton, Slider, Input } from "antd";
 import "./App.css";
+import { Link } from "react-router-dom";
 import axios from "axios";
 const count = 3;
 const App = () => {
@@ -83,7 +84,7 @@ const App = () => {
                 <List.Item.Meta
                 key={item.id}
                   avatar={<Avatar src={item.image} />}
-                  title={<a href={item.url}>{item.name}</a>}
+                  title={<Link to={`/details/${item.id}`}>{item.name}</Link> }
                   description={
                     <p
                       style={{
